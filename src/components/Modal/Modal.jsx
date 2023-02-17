@@ -4,10 +4,6 @@ import PropTypes from 'prop-types';
 import css from './Modal.module.css';
 
 class Modal extends Component {
-  state = {
-    isLoading: true,
-  };
-
   componentDidMount() {
     window.addEventListener('keydown', this.handleClose);
   }
@@ -26,7 +22,7 @@ class Modal extends Component {
     return (
       <div className={css.Overlay} onClick={this.handleClose}>
         <div className={css.Modal}>
-          <img src={this.props.modalData} alt='tags' />
+          <img src={this.props.modalData} alt="tags" />
         </div>
       </div>
     );

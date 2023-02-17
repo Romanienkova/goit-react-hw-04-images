@@ -68,16 +68,20 @@ export class App extends Component {
   };
 
   render() {
-    const { images, modalData, isModalOpen, isLoading } = this.state;
+    const { images, modalData, isModalOpen, isLoading, showLoadMore } =
+      this.state;
+
     return (
       <div className={css.App}>
         <Searchbar setQuery={this.setQuery} />
 
         {isLoading && <Loader />}
 
-        <ImageGallery data={images} toggleModal={this.toggleModal} />
+        {images.length > 0 && (
+          <ImageGallery data={images} toggleModal={this.toggleModal} />
+        )}
 
-        {images.length > 0 && <Button handleLoadMore={this.handleLoadMore} />}
+        {showLoadMore && <Button handleLoadMore={this.handleLoadMore} />}
 
         {isModalOpen && (
           <Modal modalData={modalData} toggleModal={this.toggleModal} />
