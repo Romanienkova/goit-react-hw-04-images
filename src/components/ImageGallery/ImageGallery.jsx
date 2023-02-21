@@ -8,11 +8,15 @@ export const ImageGallery = ({ images, toggleModal }) => {
   return (
     <ul className={css.ImageGallery}>
       {images.map(image => {
+        const { id, tags } = image;
+
         return (
-          <ImageGalleryItem
-            key={image.id}
+			  <ImageGalleryItem
+				  
+            key={id}
             image={image}
             toggleModal={toggleModal}
+            alt={tags}
           />
         );
       })}
