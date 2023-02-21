@@ -1,7 +1,7 @@
 import { ThreeCircles } from 'react-loader-spinner';
 import css from '../Modal/Modal.module.css';
 
-const Loader = () => {
+export const Loader = () => {
   return (
     <div className={css.Overlay}>
       <ThreeCircles
@@ -19,5 +19,3 @@ const Loader = () => {
     </div>
   );
 };
-
-export default Loader;

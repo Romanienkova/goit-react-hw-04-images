@@ -2,12 +2,12 @@ import PropTypes from 'prop-types';
 
 import css from './ImageGalleryItem.module.css';
 
-const ImageGalleryItem = ({ element, toggleModal }) => {
-  const { webformatURL, tags } = element;
+const ImageGalleryItem = ({ image, toggleModal }) => {
+  const {largeImageURL, webformatURL, tags } = image;
   return (
     <li
       className={css.ImageGalleryItem}
-      onClick={() => toggleModal(element.largeImageURL)}
+      onClick={() => toggleModal(largeImageURL)}
     >
       <img
         className={css.ImageGalleryItemImage}
@@ -21,6 +21,6 @@ const ImageGalleryItem = ({ element, toggleModal }) => {
 export default ImageGalleryItem;
 
 ImageGalleryItem.prototypes = {
-	element: PropTypes.object.isRequired,
+	image: PropTypes.object.isRequired,
 	toggleModal: PropTypes.func.isRequired,
 };

@@ -4,14 +4,14 @@ import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
 
 import css from './ImageGallery.module.css';
 
-const ImageGallery = ({ data, toggleModal }) => {
+export const ImageGallery = ({ images, toggleModal }) => {
   return (
     <ul className={css.ImageGallery}>
-      {data.map(elem => {
+      {images.map(image => {
         return (
           <ImageGalleryItem
-            key={elem.id}
-            element={elem}
+            key={image.id}
+            image={image}
             toggleModal={toggleModal}
           />
         );
@@ -20,9 +20,7 @@ const ImageGallery = ({ data, toggleModal }) => {
   );
 };
 
-export default ImageGallery;
-
 ImageGallery.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  images: PropTypes.arrayOf(PropTypes.object).isRequired,
   toggleModal: PropTypes.func.isRequired,
 };
